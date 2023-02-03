@@ -1,27 +1,33 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Little Tech Blog</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
-</head>
-<body>
-        <header>
-        <h1>THE LITTLE TECH BLOG</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The Little Tech Blog</title>
+        <link href="/style.css" rel="stylesheet" type="text/css" >
 
-    {{#if logged_in}}
-        <nav>
-            <button class="btn" id="logout">Logout</button>
-    </nav>
-    {{/if}}
+    </head>
+    <body>
+        <header>
+            <h1>THE LITTLE TECH BLOG</h1>
         </header>
-    <main>
+
+        <nav>
+            <button class="btn">Home</button>
+            {{#if logged_in}}
+                <button class="btn" id="logout">Logout</button>
+                <button class="btn" id="post">Add post</button>
+            {{else}}
+                <a href="/login">Login</a>
+            {{/if}}
+        </nav>
+        
+        <main>
             {{{body}}}
-    </main>
-    {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
-</body>
+        </main>
+        {{#if logged_in}}
+            <script src="/js/logout.js"></script>
+        {{/if}}
+
+    </body>
 </html>

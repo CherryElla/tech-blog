@@ -1,22 +1,36 @@
 const router = require('express').Router();
-const User = require("../models/User")
+const {Blog,User} = require("../models")
 const isAuth = require("../utils/auth")
 
-router.get("/", isAuth, async(req,res)=>{
+// Get all blogs for homepage
+router.get("/", async(req, res) =>{ 
     try {
-        const userData = await User.findAll({
-            attributes: { exclude: ["password"]},
-            order: [["name", "ASC"]]
-        })
-        const users = userData.map((blog) => blog.get({plain: true}))
-        res.render("homepage", {
-            users,
-            logged_in: req.session.logged_in
-        });
-    } catch (error) {
-        res.status(500).json(error)
+    const blogData = await Blog.findAll({
+        include: [{
+            model: User,
+            attributes: ["name"],
+        },
+        ],
+    });
+    const blogs = blogData.map((blog) =>
+    blog.get(
+        {
+            plain: true
+        }
+    ));
+    res.render("homepage", {
+        blogs,
+        logged_in: req.session.logged_in
+    });
+    } catch (err){
+        console.log(err)
+        res.status(500).json(err)
     }
 });
+
+
+
+
 
 router.get("/login", (req,res)=>{
     if(req.session.logged_in) {
