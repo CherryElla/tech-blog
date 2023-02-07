@@ -28,16 +28,43 @@ router.get("/", async(req, res) =>{
     }
 });
 
+// Signup route to render page
+router.get("/signup", (req,res) =>{
+    console.log("what the f")
+    res.render("signup")
+})
 
-
-
-
+// Login route to use session data, login and redirect to homepage
 router.get("/login", (req,res)=>{
     if(req.session.logged_in) {
         res.redirect("/");
         return
     }
     res.render("login")
+})
+
+// Dashboard route
+router.get("/dashboard", (req,res) =>{
+    try{
+        res.render("dashboard")
+    } catch (err) {
+        res.status(500).json(err)
+    }
+
+})
+
+router.post("/post", async (req, res) => {
+    try {
+        let formData = {
+            user_id: req.body.id,
+            title: req.body.title,
+            description: req.body.description
+        };
+        console.log(formData)
+        let blogPost = await Blog.create(formData)
+    } catch (err) {
+        res.status(500).json.err
+    }
 })
 
 module.exports = router

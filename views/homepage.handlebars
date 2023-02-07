@@ -1,35 +1,17 @@
-
 <div class="homepageDiv">
+
+{{#each blogs as |blog|}}
     <div class="wrapper">
         <div class="blogPostDiv">
-            <div class="title">
-                2023's Best VR Headset
-            </div>
+            <div class="title">{{blog.title}}</div>
             <div class="content">
-                <p>After doing a stupid amount of research, and finally owning
-                    one myself, I have come to conclude the Meta Quest 2 as
-                    being the best all-rounder VR Headset.</p>
+                <p>{{blog.description}}</p>
             </div>
+                <div class="blog-date">{{blog.createdAt}}</div>
         </div>
-        <div class="blogPostDiv">
-            <div class="title">
-                What to do if your phone gets wet?
-            </div>
-            <div class="content">
-                <p>First, clean off your device, absorbing all water visible.
-                    Next, fill a container full of dry uncooked rice. Submerge
-                    phone.</p>
-            </div>
-        </div>
-        <div class="blogPostDiv">
-            <div class="title">
-                Top 3 templating engines
-            </div>
-            <div class="content">
-                <p>elit. Commodi odio eveniet incidunt ab ipsum dicta pariatur
-                    tenetur non numquam. Neque ea libero soluta inventore autem
-                    impedit, animi maxime? Maiores, distinctio.</p>
-            </div>
-        </div>
+
     </div>
+{{/each}}
+
 </div>
+

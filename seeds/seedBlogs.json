@@ -1,0 +1,18 @@
+
+
+[
+    {
+        "title": "Best templating engines",
+        "description": "After some good research and playing around I have found top engines for node.js to include ejs and mustache!"
+      },
+      {
+        "title": "HTML cheat",
+        "description": "A great little hint for HTML lovers.. type the ! to get a quick boilerplate onto your HTML page."
+      },
+      {
+        "title": "Thoughts on Chatgpt ai",
+        "description": "An exciting and similarly scary ai technology. I shall be staying well away."
+      }
+
+]
+
