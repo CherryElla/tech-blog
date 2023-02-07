@@ -53,18 +53,6 @@ router.get("/dashboard", (req,res) =>{
 
 })
 
-router.post("/post", async (req, res) => {
-    try {
-        let formData = {
-            user_id: req.body.id,
-            title: req.body.title,
-            description: req.body.description
-        };
-        console.log(formData)
-        let blogPost = await Blog.create(formData)
-    } catch (err) {
-        res.status(500).json.err
-    }
-})
+
 
 module.exports = router

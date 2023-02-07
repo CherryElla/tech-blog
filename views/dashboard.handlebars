@@ -1,9 +1,9 @@
 <div>
 <p>Enter a title and blog post below:</p>
-<form id="blog-form" action="">
-    <input id="form-input-title" name="Title" placeholder="Add your title here" type="text"><br>
-    <input id="form-input-blog" name="Blog Post" placeholder="Add your blog post here" type="text"><br>
-    <input id="blog-post-button" type="button" value="submit">
+<form enctype="multipart/form-data" id="blog-form">
+    <input id="form-input-title" name="title" placeholder="Add your title here" type="text"><br>
+    <input id="form-input-blog" name="description" placeholder="Add your blog post here" type="text"><br>
 </form>
+    <button id="blog-post-button">Submit</button>
 </div>
 <script src="js/dashboard.js"></script>
