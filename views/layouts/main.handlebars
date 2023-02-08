@@ -4,26 +4,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>The Little Tech Blog</title>
-        <link href="/style.css" rel="stylesheet" type="text/css" >
+        <link href="/style.css" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap"
+            rel="stylesheet"
+        />
 
     </head>
     <body>
-        <header>
-            <h1>THE LITTLE TECH BLOG</h1>
-        </header>
 
         <nav>
+            <h1>THE LITTLE TECH BLOG</h1>
             <a href="/">HOME</a>
             {{#if logged_in}}
-                <button class="btn" id="logout">LOGOUT</button>
+                <a id="logout">LOGOUT</a>
                 <a href="/dashboard">DASHBOARD</a>
             {{else}}
                 <a href="/login">LOGIN</a>
-                <a href="/signup">SIGNUP</a>
+                <a id="signupLink" href="/signup">SIGNUP</a>
             {{/if}}
-
         </nav>
-        
+
         <main>
             {{{body}}}
         </main>

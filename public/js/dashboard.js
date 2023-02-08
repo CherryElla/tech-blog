@@ -1,9 +1,11 @@
+const blogForm = document.getElementById("blog-form")
+const signupLink = document.getElementById("signupLink")
+
 const sendData = async (event) => {
     event.preventDefault()
-    let blogForm = document.getElementById("blog-form")
     let formData = new FormData(blogForm)
     let data = Object.fromEntries(formData)
-    
+
     const response = await fetch("/api/data/create-blog", {
         method: "POST",
         headers: { "Content-Type": "application/json"},
@@ -13,12 +15,16 @@ const sendData = async (event) => {
         case 200:
         let blogPost = await response.json()
         console.log(blogPost)
+        blogForm.reset()
         break;
         default:
         alert("Something went wrong!")
         break;
     }
 }
+
+
+
 // An event listener on blog post button 
 const blogPostButton = document.getElementById("blog-post-button")
 blogPostButton.addEventListener("click", sendData)
