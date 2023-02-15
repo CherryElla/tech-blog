@@ -1,5 +1,12 @@
 <div id="user-blog-posts">
     <p>MY POSTS</p>
+    <ul>
+    {{#each posts as |post|}}
+    <li>
+        <a href="edit/{{post.id}}">{{post.title}}</a>
+    </li>
+    {{/each}}
+    </ul>
 </div>
 <div id="form-div">
 <p id="blog-text">BLOG</p>

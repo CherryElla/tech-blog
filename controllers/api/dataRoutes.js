@@ -6,6 +6,7 @@ router.post("/create-blog", async (req, res) => {
     try {
         const formData = await Blog.create({
             title: req.body.title,
+            user_id: req.session.user_id,
             description: req.body.description
         });
         console.log(formData)
