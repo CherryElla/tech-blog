@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Blog, User } = require("../models");
+const { Blog, User, Comment } = require("../models");
 const isAuth = require("../utils/auth");
 
 // Get all blogs for homepage
@@ -60,6 +60,35 @@ router.get("/dashboard", async (req, res) => {
         });
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+router.get("/view/:id", async (req, res) => {
+    if (req.session.logged_in) {
+        try {
+            let post = await Blog.findByPk(req.params.id, {
+            });
+            if (post.user_id !== req.session.user_id) {
+                res.redirect("/");
+                return;
+            }
+            let comments = await Comment.findAll({ include: User, 
+                where: {
+                    blog_id: post.id
+                }
+            })
+            comments = JSON.stringify(comments, null, 2)
+            res.render("view", {
+                logged_in: req.session.logged_in,
+                post: await post.toJSON(),
+                comments: JSON.parse(comments)
+            });
+        } catch (err) {
+            console.log(err)
+            res.status(500);
+        }
+    } else {
+        res.redirect("/signup");
     }
 });
 

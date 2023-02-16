@@ -1,0 +1,22 @@
+<div class="view-post" data-blog-id="{{post.id}}">
+    <h3 id="text-title">{{post.title}}</h3>
+    <hr>
+    <div>Description</div>
+    <p id="text-description">{{post.description}}</p>
+    <hr>
+    {{#each comments as |comment|}}
+        <div>
+            <p>{{ comment.user.name }}</p>
+            <p>{{ comment.user.email }}</p>
+            {{comment.text}}
+        </div>
+    {{/each}}
+    {{#if logged_in}}
+        <button id="comment-btn" data-blog-id="{{post.id}}">Comment</button>
+        <div id="comment-div" hidden>
+            <textarea id="comment-text"></textarea>
+            <button id="save-comment">Save</button>
+        </div>
+    {{/if}}
+</div>
+<script src="/js/comment.js"></script>

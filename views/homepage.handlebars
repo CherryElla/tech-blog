@@ -1,17 +1,17 @@
 <div class="homepageDiv">
 
-{{#each blogs as |blog|}}
-    <div class="wrapper">
-        <div class="blogPostDiv">
-            <div class="title">{{blog.title}}</div>
-            <div class="content">
-                <p>{{blog.description}}</p>
-            </div>
+    {{#each blogs as |blog|}}
+        <div class="wrapper">
+            <div class="blogPostDiv">
+                <div class="title"><a href="/view/{{blog.id}}">{{blog.title}}</a></div>
+                <div class="content">
+                    <p>{{blog.description}}</p>
+                </div>
                 <div class="blog-date">{{blog.createdAt}}</div>
+                
+                
+            </div>
+
         </div>
-
-    </div>
-{{/each}}
-
+    {{/each}}
 </div>
-
