@@ -16,4 +16,12 @@ router.post("/create-blog", async (req, res) => {
     }
 })
 
+router.post('update-blog', async (req, res) => {
+    try {
+
+    } catch (err) {
+        console.log(err)
+    }
+})
+
 module.exports = router

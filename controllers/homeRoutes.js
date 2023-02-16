@@ -48,8 +48,12 @@ router.get("/dashboard", async (req, res) => {
     try {
         let posts = await Blog.findAll({
             where: { user_id: req.session.user_id },
+            raw: true,
         });
-        console.log(posts)
+        for (let post of posts) {
+            console.log(post.id);
+            console.log(post.title);
+        }
         res.render("dashboard", {
             posts: posts,
             logged_in: req.session.logged_in,
@@ -59,12 +63,20 @@ router.get("/dashboard", async (req, res) => {
     }
 });
 
-router.get("/edit/:", (req, res) => {
+router.get("/edit/:id", async (req, res) => {
     if (req.session.logged_in) {
-        // TODO: get blog post id from params
-        // TODO: get the blog post data and pass to edit template
-        // TODO: make sure the owner of the blog post is the one requesting to edit
-        res.render("edit");
+        try {
+            let post = await Blog.findByPk(req.params.id, { raw: true });
+            if (post.user_id !== req.session.user_id) {
+                res.redirect("/");
+                return;
+            }
+            res.render("edit", {
+                post: post,
+            });
+        } catch {
+            res.statusCode(500);
+        }
     } else {
         res.redirect("/signup");
     }

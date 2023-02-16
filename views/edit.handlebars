@@ -1,8 +1,11 @@
 <div class="edit-post">
     <div>Title</div>
-    <textarea>{{post.title}}</textarea>
+    <textarea id="text-title">{{post.title}}</textarea>
+    <br>
     <div>Description</div>
-    <textarea>{{post.description}}</textarea>
+    <textarea id="text-description">{{post.description}}</textarea>
 
-    <button>Save</button>
+    <br>
+    <button id="save-btn" data-post-id="{{post.id}}">Save</button>
 </div>
+<script src="/js/edit.js"></script>
