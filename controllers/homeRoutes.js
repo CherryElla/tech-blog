@@ -72,6 +72,7 @@ router.get("/edit/:id", async (req, res) => {
                 return;
             }
             res.render("edit", {
+                logged_in: req.session.logged_in,
                 post: post,
             });
         } catch {

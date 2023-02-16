@@ -10,9 +10,12 @@ saveBtn.addEventListener("click", async () => {
     };
     console.log(body)
     try {
-        let response = await fetch('/api/update-blog', {
+        let response = await fetch('/api/data/update-blog', {
             method: "POST",
             body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
         if (response.ok) {
             //TODO: Redirect back to dashboard

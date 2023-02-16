@@ -16,11 +16,31 @@ router.post("/create-blog", async (req, res) => {
     }
 })
 
-router.post('update-blog', async (req, res) => {
-    try {
+router.post('/update-blog', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('/')
+        return
+    }
 
+    try {
+        console.log(req.body)
+        let id = parseInt(req.body.id)
+        let post = await Blog.findByPk(id)
+        if (post.user_id === req.session.user_id) {
+            let blog = await Blog.update({
+                title: req.body.title,
+                description: req.body.description
+            }, {
+                where: {
+                    id: id
+                }
+            })
+            console.log(blog)
+        }
+        res.redirect('/dashboard')
     } catch (err) {
         console.log(err)
+        res.statusCode(500)
     }
 })
 
