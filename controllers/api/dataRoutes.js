@@ -57,10 +57,10 @@ router.post("/add-comment", async (req, res) => {
             blog_id: post_id,
         });
         console.log(comment);
-        res.status(200);
+        res.status(200).send();
     } catch (error) {
         console.log(error);
-        res.status(500);
+        res.status(500).send();
     }
 });
 

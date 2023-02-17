@@ -1,19 +1,19 @@
 <div class="view-post" data-blog-id="{{post.id}}">
-    <h3 id="text-title">{{post.title}}</h3>
-    <hr>
-    <div>Description</div>
-    <p id="text-description">{{post.description}}</p>
-    <hr>
+    <div class="post-wrapper">
+    <h3 id="post-title">{{post.title}}</h3>
+    <p id="post-description">{{post.description}}</p>
+    </div>
     {{#each comments as |comment|}}
-        <div>
-            <p>{{ comment.user.name }}</p>
-            {{comment.text}}
+        <div id="comment-text">
+            <h6 id="user-name">{{ comment.user.name }}</h6>
+            <p>{{comment.text}}</p>
+            <hr>
         </div>
     {{/each}}
     {{#if logged_in}}
         <button id="comment-btn" data-blog-id="{{post.id}}">Comment</button>
         <div id="comment-div" hidden>
-            <textarea id="comment-text"></textarea>
+            <textarea id="comment-area"></textarea>
             <button id="save-comment">Save</button>
         </div>
     {{/if}}

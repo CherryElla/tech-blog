@@ -13,7 +13,7 @@
 .Graphic-Design-5-rgba { color: rgba(191, 191, 191, 1); }
 
 
-
+/* Main Page styling */
 html {
     height: 100%;
     width: 100%;
@@ -33,7 +33,6 @@ nav {
     float: left;
 }
 
-
 nav a {
     float: right;
     padding-left: 10px;
@@ -42,24 +41,27 @@ nav a {
     color: #F25252;
 }
 
+nav a:hover {
+    color: #59322E;
+}
+
 main {
     display: flex;
     width: 100%;
 }
 
+
+/* Homepage styling */
 .homepageDiv {
-    display:inline-block;
     width: 100%;
     height: auto;
-    padding-left: 15%;
-    padding-top: 5%;
-
+    margin-top: 100px;
 }
-.wrapper {
-    display: flex;
-    column-gap: 20px;
-    justify-content: space-between;
-    padding: 20px;
+
+.title {
+    text-align: center;
+    background-color: aliceblue;
+    font-size: 20px;
 }
 
 .blogPostDiv {
@@ -67,14 +69,15 @@ main {
     height: auto;
     border: solid;
     border-color: #59322E;
-
+    margin: 0 auto;
+    margin-bottom: 30px;
 }
 
-.title {
-    text-align: center;
-    background-color: aliceblue;
-    color: #F25252;
-    font-size: larger;
+.blogPostDiv a {
+    color: #F23838;
+}
+.blogPostDiv a:hover {
+    color:#59322E;
 }
 
 .content {
@@ -85,7 +88,6 @@ main {
 .content p {
     text-align: center;
     vertical-align: middle;
-    /* margin: 0 auto; */
 }
 
 .blog-date {
@@ -93,6 +95,72 @@ main {
     text-align: center;
 }
 
+
+/* Login Page styling */
+.form-group {
+    margin-top: 10;
+}
+
+#login-form {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    border: #F25252 dashed;
+    margin-top: 100px;
+}
+
+#login-form h2 {
+    color: aliceblue;
+}
+
+#login-form button {
+    background-color: #F25252;
+    margin: 10 0 10 0;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#login-form button:hover {
+    background-color: #BFBFBF;
+}
+
+#login-form input {
+    margin: 10 0 10 0;
+}
+
+
+/* View Page styling */
+.view-post {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.post-wrapper {
+    border: #F23838 dashed;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.post-wrapper h3 {
+    background-color: aliceblue;
+    margin: 0;
+}
+
+.post-wrapper p {
+    padding: 5px;
+}
+
+#user-name {
+    color: aliceblue;
+    font-size: 10px;
+}
+
+#comment-text p{
+    font-style: italic;
+}
+
+
+/* Dashboard Page styling */
 #user-blog-posts {
     margin: 0 auto;
     width: 40%;
@@ -112,31 +180,38 @@ main {
 #user-blog-posts p {
     color:white;
     padding-top: 10px;
-    font-size: 30px; 
+    font-size: 25px; 
+    text-align: center;
 }
+
 #user-blog-posts a {
     text-align: left;
     color: white;
 }
 
+#user-blog-posts a:hover {
+    color:#59322E;
+}
+
+#user-blog-posts li {
+    margin-top: 20px;
+}
+
 #form-div {
-    /* display:block; */
     margin: 0 auto;
     width: 40%;
     height: 400px;
     text-align: center;
     margin-top: 100px;
-    background-color: #F25252;
     border-style: dashed;
     border-color: #A62121;
 }
 
 #form-input-title {
     background-color: #BFBFBF;
-    /* border-radius: 10px; */
     border-style: dashed;
     position: relative;
-    width: 200px;
+    width: 80%px;
     height: 50px;
     margin: 20px;
     text-align: center;
@@ -154,13 +229,12 @@ main {
 
 #form-input-blog {
     background-color: #BFBFBF;
-    /* border-radius: 10px; */
     border-style: dashed;
     position: relative;
     width: 80%;
     height: 100px;
-   color: white;
-   text-align: center;
+    color: white;
+    text-align: center;
 }
 
 #blog-post-button {
@@ -170,11 +244,101 @@ main {
 }
 
 #blog-post-button:hover {
-    background-color: #A62121;
+    background-color: #F23838;
 }
 
 #blog-text {
     color:white;
     padding-top: 10px;
+    font-size: 25px;
+}
+
+
+/* Edit Page styling */
+.edit-post {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 70%;
+    height: 400px;
+    text-align: center;
+    background-color: #F25252;
+    border-style: dashed;
+    border-color: #A62121;
+}
+
+.edit-post h6 {
     font-size: 30px;
+    margin: 5 0 10 0;
+    color: aliceblue;
+}
+
+.edit-post button {
+    background-color: #BFBFBF;
+    font-family: 'Roboto Mono', monospace;
+    color: #A62121;
+
+    margin-top: 10;
+}
+
+.edit-post button:hover {
+    background-color: #59322E;
+}
+
+#text-title {
+    width: 50%;
+    height: 70px;
+    margin: 10 0 10 0;
+    border: #BFBFBF dashed;
+    text-align: center;
+    padding: 10;
+}
+
+#text-description {
+    width: 60%;
+    height: 100px;
+    margin: 10 0 10 0;
+    border: #BFBFBF dashed;
+    text-align: center;
+    padding: 10;
+}
+
+
+/* Signup Page styling */
+.login-card {
+    margin: 0 auto;
+    margin-top: 100px;
+    border: #F25252 dashed;
+    padding: 10px;
+    text-align: center;
+    width: 70%;
+}
+
+.login-card h2 {
+    color: aliceblue;
+}
+
+.login-card input {
+    margin: 10 0 10 0;
+}
+
+.login-card button {
+    background-color: #F25252;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.login-card button:hover{
+    background-color: #BFBFBF;
+}
+
+.login-card label {
+    margin: 0 auto;
+    display:flex;
+    justify-content: center;
+
+}
+
+.form-group {
+    /* width: 30%; */
+   display: block;
+    margin: 0 auto;
 }
