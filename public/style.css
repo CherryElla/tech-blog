@@ -151,12 +151,38 @@ main {
 }
 
 #user-name {
-    color: aliceblue;
-    font-size: 10px;
+    color: #F25252;
+    font-size: 12px;
+    margin: 5 0 0 0;
 }
 
 #comment-text p{
     font-style: italic;
+    font-size: 18px;
+    margin: 0;
+}
+
+#comment-div button {
+    background-color: #BFBFBF;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#comment-div button:hover {
+    background-color: #F25252;
+}
+
+#comment-btn {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #BFBFBF;
+}
+
+#comment-btn:hover {
+    background-color: #F25252;
+}
+
+#comment-area {
+    border: #BFBFBF dashed;
+    margin: 5 0 0 0;
 }
 
 
