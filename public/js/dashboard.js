@@ -13,9 +13,9 @@ const sendData = async (event) => {
     });
     switch (response.status) {
         case 200:
-        let blogPost = await response.json()
-        console.log(blogPost)
+        let blogPost = await response.json()  
         blogForm.reset()
+        location.reload(true)
         break;
         default:
         alert("Something went wrong!")

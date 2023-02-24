@@ -29,8 +29,7 @@ router.get("/", async (req, res) => {
 });
 
 // Signup route to render page
-router.get("/signup", (req, res) => {
-    console.log("what the f");
+router.get("/signup", async (req, res) => {
     res.render("signup");
 });
 
@@ -68,10 +67,10 @@ router.get("/view/:id", async (req, res) => {
         try {
             let post = await Blog.findByPk(req.params.id, {
             });
-            if (post.user_id !== req.session.user_id) {
-                res.redirect("/");
-                return;
-            }
+            // if (post.user_id !== req.session.user_id) {
+            //     res.redirect("/");
+            //     return;
+            // }
             let comments = await Comment.findAll({ include: User, 
                 where: {
                     blog_id: post.id
@@ -104,6 +103,7 @@ router.get("/edit/:id", async (req, res) => {
                 logged_in: req.session.logged_in,
                 post: post,
             });
+
         } catch {
             res.statusCode(500);
         }

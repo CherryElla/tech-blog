@@ -1,4 +1,4 @@
-const loginFormHandler = async (event) => {
+async function loginFormHandler(event) {
     event.preventDefault();
 
     const email = document.querySelector("#email-input").value.trim();
@@ -14,11 +14,11 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace("/");
         } else {
-            console.log(await response.json());
+            // console.log(await response.json());
             alert("Failed login");
         }
     }
-};
+}
 
 document
     .getElementById("login-form")
