@@ -1,19 +1,31 @@
-<div id="user-blog-posts">
-    <p class="dash-post-title">MY POSTS</p>
-    <ul>
-    {{#each posts as |post|}}
-    <li>
-        <a href="edit/{{post.id}}">{{post.title}}</a>
-    </li>
-    {{/each}}
-    </ul>
-</div>
-<div id="form-div">
-<p id="blog-text">BLOG</p>
-<form enctype="multipart/form-data" id="blog-form">
-    <input id="form-input-title" name="title" placeholder="Add your title here" type="text"><br>
-    <input id="form-input-blog" name="description" placeholder="Add your blog post here" type="text"><br>
-</form>
-    <button id="blog-post-button">Submit</button>
+<div id="dashboard-wrapper">
+    <div id="user-blog-posts">
+        <p class="dash-post-title">MY POSTS</p>
+        <ul>
+            {{#each posts as |post|}}
+                <li>
+                    <a href="edit/{{post.id}}">{{post.title}}</a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div id="form-div">
+        <p id="blog-text">BLOG</p>
+        <form enctype="multipart/form-data" id="blog-form">
+            <input
+                id="form-input-title"
+                name="title"
+                placeholder="Add your title here"
+                type="text"
+            /><br />
+            <input
+                id="form-input-blog"
+                name="description"
+                placeholder="Add your blog post here"
+                type="text"
+            /><br />
+        </form>
+        <button id="blog-post-button">Submit</button>
+    </div>
 </div>
 <script src="js/dashboard.js"></script>

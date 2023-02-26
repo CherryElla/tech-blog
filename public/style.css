@@ -1,36 +1,52 @@
 /* Color Theme Swatches in Hex */
-.Graphic-Design-1-hex { color: #59322E; }
-.Graphic-Design-2-hex { color: #A62121; }
-.Graphic-Design-3-hex { color: #F23838; }
-.Graphic-Design-4-hex { color: #F25252; }
-.Graphic-Design-5-hex { color: #BFBFBF; }
-
-/* Color Theme Swatches in RGBA */
-.Graphic-Design-1-rgba { color: rgba(89, 49, 46, 1); }
-.Graphic-Design-2-rgba { color: rgba(165, 33, 33, 1); }
-.Graphic-Design-3-rgba { color: rgba(242, 55, 55, 1); }
-.Graphic-Design-4-rgba { color: rgba(242, 82, 82, 1); }
-.Graphic-Design-5-rgba { color: rgba(191, 191, 191, 1); }
-
+.Graphic-Design-1-hex {
+    color: #eb9448ff;
+}
+.Graphic-Design-2-hex {
+    color: #605b58ff;
+}
+.Graphic-Design-3-hex {
+    color: #f7f7f2ff;
+}
+.Graphic-Design-4-hex {
+    color: #f05d23ff;
+}
+.Graphic-Design-5-hex {
+    color: #bfbfbf;
+}
 
 /* Main Page styling */
 html {
     height: 100%;
     width: 100%;
-    background-color: #BFBFBF;
-    font-family: 'Roboto Mono', monospace;
+    background-color: #bfbfbf;
+    background-image: url("images/pexels-mungai-mutugi-12950887.jpg");
+    background-position: center;
+    background-size: cover;
+    font-family: "Roboto Mono", monospace;
+}
 
+body {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
 }
 
 h1 {
     font-size: 30px;
     width: 40%;
     margin: 0;
+    color: rgb(235, 148, 72);
+
+
 }
 
 nav {
     width: 100%;
     float: left;
+    background-color: hsla(23, 4%, 36%, 0.7);
+    display: inline;
 }
 
 nav a {
@@ -38,11 +54,11 @@ nav a {
     padding-left: 10px;
     font-size: 20px;
     text-decoration: none;
-    color: #F25252;
+    color: #bfbfbf;
 }
 
 nav a:hover {
-    color: #59322E;
+    color: #f05d23ff;
 }
 
 main {
@@ -50,6 +66,15 @@ main {
     width: 100%;
 }
 
+footer {
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    color: white;
+    position: absolute;
+    text-align: center;
+    font-style: italic;
+}
 
 /* Homepage styling */
 .homepageDiv {
@@ -68,20 +93,20 @@ main {
     width: 70%;
     height: auto;
     border: solid;
-    border-color: #59322E;
     margin: 0 auto;
     margin-bottom: 30px;
+    background-color: hsla(60, 24%, 96%, 0.9);
 }
 
 .blogPostDiv a {
-    color: #F23838;
+    color: #f05d23ff;
 }
 .blogPostDiv a:hover {
-    color:#59322E;
+    color: #59322e;
 }
 
 .content {
-    word-break:normal;
+    word-break: normal;
     overflow: hidden;
 }
 
@@ -95,7 +120,6 @@ main {
     text-align: center;
 }
 
-
 /* Login Page styling */
 .form-group {
     margin-top: 10;
@@ -105,29 +129,27 @@ main {
     margin: 0 auto;
     width: 70%;
     text-align: center;
-    border: #F25252 dashed;
+    border: #f05d23ff dashed;
     margin-top: 100px;
-}
-
-#login-form h2 {
-    color: aliceblue;
+    background-color: hsla(60, 24%, 96%, 0.7);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #login-form button {
-    background-color: #F25252;
+    background-color: #f05d23ff;
     margin: 10 0 10 0;
     text-align: center;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
 }
 
 #login-form button:hover {
-    background-color: #BFBFBF;
+    background-color: #bfbfbf;
 }
 
 #login-form input {
     margin: 10 0 10 0;
 }
-
 
 /* View Page styling */
 .view-post {
@@ -136,14 +158,20 @@ main {
 }
 
 .post-wrapper {
-    border: #F23838 dashed;
+    width: 70%;
+    height: auto;
+    border: solid;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    background-color: hsla(60, 24%, 96%, 0.9);;
     margin-top: 100px;
-    text-align: center;
+    border-radius: 5px;
 }
 
 .post-wrapper h3 {
     background-color: aliceblue;
     margin: 0;
+    text-align: center;
 }
 
 .post-wrapper p {
@@ -151,111 +179,136 @@ main {
 }
 
 #user-name {
-    color: #F25252;
+    color: #f05d23ff;
     font-size: 12px;
     margin: 5 0 0 0;
 }
 
-#comment-text p{
+#comment-text p {
     font-style: italic;
     font-size: 18px;
     margin: 0;
 }
 
 #comment-div button {
-    background-color: #BFBFBF;
-    font-family: 'Roboto Mono', monospace;
+    background-color: #bfbfbf;
+    font-family: "Roboto Mono", monospace;
 }
 
 #comment-div button:hover {
-    background-color: #F25252;
+    background-color: #f05d23ff;
 }
 
 #comment-btn {
-    font-family: 'Roboto Mono', monospace;
-    background-color: #BFBFBF;
+    font-family: "Roboto Mono", monospace;
+    background-color: #bfbfbf;
 }
 
 #comment-btn:hover {
-    background-color: #F25252;
+    background-color: #f05d23ff;
 }
 
-#comment-area {
-    border: #BFBFBF dashed;
+#comment-text {
+    border: #bfbfbf dashed;
     margin: 5 0 0 0;
+    background-color: hsla(60, 24%, 96%, 0.7)
 }
 
 
 /* Dashboard Page styling */
-#user-blog-posts {
-    margin: 0 auto;
-    width: 40%;
-    height: 400px;
-    text-align: left;
+
+#dashboard-wrapper {
+    display: flex;
+    width: 100%;
+    height: auto;
+    /* padding-top: 10%; */
     margin-top: 100px;
-    background-color: #F25252;
-    border-style: dashed;
-    border-color: #A62121;
+    justify-content: space-around;
+}
+
+@media (max-width: 700px){
+    #dashboard-wrapper {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+#user-blog-posts {
+    height: 400px;
 }
 
 #user-blog-posts .title {
     text-align: center;
-    background-color: #F25252;
+    background-color: #f05d23ff;
 }
 
 #user-blog-posts p {
-    color:white;
+    color: white;
     padding-top: 10px;
-    font-size: 25px; 
-    text-align: center;
+    font-size: 25px;
 }
 
 #user-blog-posts a {
-    text-align: left;
     color: white;
+    word-wrap: break-word;
 }
 
 #user-blog-posts a:hover {
-    color:#59322E;
+    color: #f05d23ff;
 }
 
 #user-blog-posts li {
     margin-top: 20px;
+    background-color: #bfbfbf;
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    list-style-type: none;
+    padding: 2%;
+    border-style: solid;
+}
+
+#user-blog-posts ul {
+    margin: 0;
+    padding-left: 0;
 }
 
 #form-div {
-    margin: 0 auto;
-    width: 40%;
     height: 400px;
     text-align: center;
-    margin-top: 100px;
-    border-style: dashed;
-    border-color: #A62121;
+    background-color: #bfbfbf;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: hsla(60, 24%, 96%, 0.7);
 }
 
 #form-input-title {
-    background-color: #BFBFBF;
+    background-color: aliceblue;
     border-style: dashed;
     position: relative;
     width: 80%px;
     height: 50px;
     margin: 20px;
     text-align: center;
+    border-radius: 5px;
+    padding: 20px;
 }
 
 #form-input-title::-webkit-input-placeholder {
-    color: white;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
 }
 
 #form-input-blog::-webkit-input-placeholder {
-    color: white;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
 }
 
 #form-input-blog {
-    background-color: #BFBFBF;
+    background-color: aliceblue;
     border-style: dashed;
+    border-radius: 5px;
     position: relative;
     width: 80%;
     height: 100px;
@@ -265,20 +318,21 @@ main {
 
 #blog-post-button {
     color: white;
-    background-color: #BFBFBF;
-    font-family: 'Roboto Mono', monospace;
+    background-color: #bfbfbf;
+    font-family: "Roboto Mono", monospace;
+    border-radius: 2px;
 }
 
 #blog-post-button:hover {
-    background-color: #F23838;
+    background-color: #f05d23ff;
 }
 
 #blog-text {
-    color:white;
+    color: white;
     padding-top: 10px;
     font-size: 25px;
-}
 
+}
 
 /* Edit Page styling */
 .edit-post {
@@ -287,34 +341,34 @@ main {
     width: 70%;
     height: 400px;
     text-align: center;
-    background-color: #F25252;
-    border-style: dashed;
-    border-color: #A62121;
+    background-color: hsla(60, 24%, 96%, 0.7);
+    border-style: solid;
+    border-radius: 5px;
 }
 
 .edit-post h6 {
     font-size: 30px;
     margin: 5 0 10 0;
-    color: aliceblue;
+    color: black;
 }
 
 .edit-post button {
-    background-color: #BFBFBF;
-    font-family: 'Roboto Mono', monospace;
-    color: #A62121;
-
+    background-color: #bfbfbf;
+    font-family: "Roboto Mono", monospace;
+    color: white;
+    border-radius: 2px;
     margin-top: 10;
 }
 
 .edit-post button:hover {
-    background-color: #59322E;
+    background-color: #f05d23ff;
 }
 
 #text-title {
     width: 50%;
     height: 70px;
     margin: 10 0 10 0;
-    border: #BFBFBF dashed;
+    border: #bfbfbf dashed;
     text-align: center;
     padding: 10;
 }
@@ -323,24 +377,26 @@ main {
     width: 60%;
     height: 100px;
     margin: 10 0 10 0;
-    border: #BFBFBF dashed;
+    border: #bfbfbf dashed;
     text-align: center;
     padding: 10;
 }
 
-
 /* Signup Page styling */
+
 .login-card {
     margin: 0 auto;
     margin-top: 100px;
-    border: #F25252 dashed;
+    border: #f05d23ff dashed;
     padding: 10px;
     text-align: center;
     width: 70%;
+    background-color: hsla(60, 24%, 96%, 0.7);
+    border-radius: 5px;
 }
 
 .login-card h2 {
-    color: aliceblue;
+    color: #f05d23ff;
 }
 
 .login-card input {
@@ -348,23 +404,22 @@ main {
 }
 
 .login-card button {
-    background-color: #F25252;
-    font-family: 'Roboto Mono', monospace;
+    background-color: #bfbfbf;
+    font-family: "Roboto Mono", monospace;
+    border-radius: 2px;
 }
 
-.login-card button:hover{
-    background-color: #BFBFBF;
+.login-card button:hover {
+    background-color: #f05d23ff;
 }
 
 .login-card label {
     margin: 0 auto;
-    display:flex;
+    display: flex;
     justify-content: center;
-
 }
 
 .form-group {
-    /* width: 30%; */
-   display: block;
+    display: block;
     margin: 0 auto;
 }
